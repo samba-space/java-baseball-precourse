@@ -44,10 +44,10 @@ public class BaseballNumber {
         }
     }
 
-    public ResultVO matchBaseballNumber(BaseballNumber otherNumbers) {
+    public BaseballResultVO matchBaseballNumber(BaseballNumber otherNumbers) {
         int strikeCount = getStrikeCount(otherNumbers);
         int ballCount = getBallCount(otherNumbers);
-        return new ResultVO(strikeCount, ballCount);
+        return new BaseballResultVO(strikeCount, ballCount);
     }
 
     private int getBallCount(BaseballNumber otherNumbers) {

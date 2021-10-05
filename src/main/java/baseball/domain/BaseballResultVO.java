@@ -2,11 +2,11 @@ package baseball.domain;
 
 import java.util.Objects;
 
-public class ResultVO {
+public class BaseballResultVO {
     private int strike;
     private int ball;
 
-    public ResultVO(int strike, int ball) {
+    public BaseballResultVO(int strike, int ball) {
         this.strike = strike;
         this.ball = ball;
     }
@@ -31,7 +31,7 @@ public class ResultVO {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ResultVO resultVO = (ResultVO) o;
+        BaseballResultVO resultVO = (BaseballResultVO) o;
         return getStrike() == resultVO.getStrike() && getBall() == resultVO.getBall();
     }
 
@@ -42,7 +42,7 @@ public class ResultVO {
 
     @Override
     public String toString() {
-        return "ResultVO{" +
+        return "BaseballResultVO{" +
                 "strike=" + strike +
                 ", ball=" + ball +
                 '}';

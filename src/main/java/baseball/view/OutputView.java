@@ -1,9 +1,9 @@
 package baseball.view;
 
-import baseball.domain.ResultVO;
+import baseball.domain.BaseballResultVO;
 
 public class OutputView {
-    public static void output(ResultVO result) {
+    public static void output(BaseballResultVO result) {
         int strike = result.getStrike();
         int ball = result.getBall();
         if (strike > 0) {
@@ -15,7 +15,7 @@ public class OutputView {
         printOrderCase(result);
     }
 
-    private static void printOrderCase(ResultVO result) {
+    private static void printOrderCase(BaseballResultVO result) {
         if (result.isFinish()) {
             System.out.println("\n3개의 숫자를 모두 맞히셨습니다! 게임 끝");
         }

@@ -71,10 +71,10 @@ public class BaseballNumberTest {
         //given
         BaseballNumber computerNumbers = new BaseballNumber(Arrays.asList(7, 1, 3));
         BaseballNumber userNumbers = new BaseballNumber(Arrays.asList(userNum1, userNum2, userNum3));
-        ResultVO expectedResult = new ResultVO(strike, ball);
+        BaseballResultVO expectedResult = new BaseballResultVO(strike, ball);
 
         //when
-        ResultVO result = computerNumbers.matchBaseballNumber(userNumbers);
+        BaseballResultVO result = computerNumbers.matchBaseballNumber(userNumbers);
 
         //then
         assertThat(result).isEqualTo(expectedResult);
