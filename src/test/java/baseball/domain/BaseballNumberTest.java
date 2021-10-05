@@ -3,13 +3,13 @@ package baseball.domain;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThatCode;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.Assertions.*;
 
 public class BaseballNumberTest {
 
@@ -62,5 +62,21 @@ public class BaseballNumberTest {
         assertThatThrownBy(() -> new BaseballNumber(numbers))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 중복된 수는 입력할 수 없습니다.");
+    }
+
+    @DisplayName("컴퓨터 number 와 사용자 number 를 매치했을 때, Strike, Ball count 가 리턴된다.")
+    @ParameterizedTest
+    @CsvSource(value = {"1,2,3,1,1", "1,4,5,0,1", "6,7,1,0,2", "2,1,6,1,0", "7,1,3,3,0"})
+    void 사용자_컴퓨터_숫자_매치(int userNum1, int userNum2, int userNum3, int strike, int ball) {
+        //given
+        BaseballNumber computerNumbers = new BaseballNumber(Arrays.asList(7, 1, 3));
+        BaseballNumber userNumbers = new BaseballNumber(Arrays.asList(userNum1, userNum2, userNum3));
+        ResultVO expectedResult = new ResultVO(strike, ball);
+
+        //when
+        ResultVO result = computerNumbers.matchBaseballNumber(userNumbers);
+
+        //then
+        assertThat(result).isEqualTo(expectedResult);
     }
 }
