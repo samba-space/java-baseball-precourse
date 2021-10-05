@@ -23,6 +23,10 @@ public class ResultVO {
         return strike == 3 ? true : false;
     }
 
+    public boolean isNoting() {
+        return (strike == 0 && ball == 0) ? true : false;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
