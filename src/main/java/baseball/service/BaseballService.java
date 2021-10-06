@@ -10,7 +10,7 @@ public class BaseballService {
     private static final int NUMBER_SIZE = 3;
 
     public List<Integer> createNonDuplicateNumbers() {
-        Set<Integer> nonDuplicateNumbers = new HashSet<>();
+        Set<Integer> nonDuplicateNumbers = new LinkedHashSet<>();
         while (nonDuplicateNumbers.size() < NUMBER_SIZE) {
             nonDuplicateNumbers.add(Randoms.pickNumberInRange(RANGE_START, RANGE_END));
         }
