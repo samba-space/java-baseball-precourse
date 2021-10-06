@@ -3,8 +3,8 @@ package baseball.domain;
 import java.util.Objects;
 
 public class BaseballResultVO {
-    private int strike;
-    private int ball;
+    private final int strike;
+    private final int ball;
 
     public BaseballResultVO(int strike, int ball) {
         this.strike = strike;
