@@ -7,4 +7,7 @@ public class Constants {
     public static final String GAME_RESTART_INPUT = "1";
     public static final String GAME_EXIT_INPUT = "2";
     public static final String GAME_RESULT_FORMAT = "%d스트라이크 %d볼";
+
+    private Constants() {
+    }
 }
