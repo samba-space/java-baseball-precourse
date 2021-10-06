@@ -20,11 +20,15 @@ public class BaseballResultVO {
     }
 
     public boolean isFinish() {
-        return strike == 3 ? true : false;
+        return strike == 3;
+    }
+
+    public boolean isBoth() {
+        return (strike > 0 && ball > 0);
     }
 
     public boolean isNoting() {
-        return (strike == 0 && ball == 0) ? true : false;
+        return (strike == 0 && ball == 0);
     }
 
     @Override
