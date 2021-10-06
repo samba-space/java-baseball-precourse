@@ -58,7 +58,7 @@ public class BaseballNumber {
     private int getStrikeCount(BaseballNumber otherNumbers) {
         int strikeCount = 0;
         for (int i = 0; i < NUMBER_SIZE; ++i) {
-            strikeCount += baseballNumbers.get(i) == otherNumbers.baseballNumbers.get(i) ? 1 : 0;
+            strikeCount += baseballNumbers.get(i).equals(otherNumbers.baseballNumbers.get(i)) ? 1 : 0;
         }
         return strikeCount;
     }
