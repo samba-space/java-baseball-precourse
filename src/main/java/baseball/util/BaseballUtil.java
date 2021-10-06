@@ -1,5 +1,7 @@
 package baseball.util;
 
+import baseball.common.MessageType;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class BaseballUtil {
 
     private static void validateNullOrEmpty(String stringNumbers) {
         if (stringNumbers == null || stringNumbers.isEmpty()) {
-            throw new IllegalArgumentException("[ERROR] 빈 값을 입력할 수 없습니다.");
+            throw new IllegalArgumentException(MessageType.ERROR_EMPTY.getMessage());
         }
     }
 
@@ -29,7 +31,7 @@ public class BaseballUtil {
         try {
             Integer.parseInt(stringNumbers);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("[ERROR] 숫자 형식이 아닙니다.");
+            throw new IllegalArgumentException(MessageType.ERROR_NUMBER_FORMAT.getMessage());
         }
     }
 }

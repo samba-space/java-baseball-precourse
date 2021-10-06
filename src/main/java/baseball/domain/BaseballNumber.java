@@ -1,5 +1,7 @@
 package baseball.domain;
 
+import baseball.common.MessageType;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -20,26 +22,26 @@ public class BaseballNumber {
 
     private void validateNullOrEmpty(List<Integer> baseballNumbers) {
         if (baseballNumbers == null || baseballNumbers.isEmpty()) {
-            throw new IllegalArgumentException("[ERROR] baseballNumbers 가 빈 값 입니다.");
+            throw new IllegalArgumentException(MessageType.ERROR_EMPTY.getMessage());
         }
     }
 
     private void validateZeroNumber(List<Integer> baseballNumbers) {
         if (baseballNumbers.contains(0)) {
-            throw new IllegalArgumentException("[ERROR] 0은 baseballNumber 가 아닙니다.");
+            throw new IllegalArgumentException(MessageType.ERROR_ZERO.getMessage());
         }
     }
 
     private void validateSize(List<Integer> baseballNumbers) {
         if (baseballNumbers.size() != NUMBER_SIZE) {
-            throw new IllegalArgumentException("[ERROR] 3자리 수가 아닙니다.");
+            throw new IllegalArgumentException(MessageType.ERROR_NUMBER_SIZE.getMessage());
         }
     }
 
     private void validateDuplicate(List<Integer> baseballNumbers) {
         Set<Integer> nonDuplicateNumbers = new HashSet<>(baseballNumbers);
         if (nonDuplicateNumbers.size() != NUMBER_SIZE) {
-            throw new IllegalArgumentException("[ERROR] 중복된 수는 입력할 수 없습니다.");
+            throw new IllegalArgumentException(MessageType.ERROR_DUPLICATE_NUM.getMessage());
         }
     }
 

@@ -1,5 +1,6 @@
 package baseball.domain;
 
+import baseball.common.MessageType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -27,7 +28,7 @@ public class BaseballNumberTest {
     void null_empty_numbers_입력_예외발생(List<Integer> numbers) {
         assertThatThrownBy(() -> new BaseballNumber(numbers))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("[ERROR] baseballNumbers 가 빈 값 입니다.");
+                .hasMessage(MessageType.ERROR_EMPTY.getMessage());
     }
 
     @DisplayName("baseballNumber 로 0을 입력 시 IllegalArgumentException 이 발생한다.")
@@ -38,7 +39,7 @@ public class BaseballNumberTest {
         //when, then
         assertThatThrownBy(() -> new BaseballNumber(numbers))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("[ERROR] 0은 baseballNumber 가 아닙니다.");
+                .hasMessage(MessageType.ERROR_ZERO.getMessage());
     }
 
     @DisplayName("baseballNumber 가 3자리 수가 아닐 경우 IllegalArgumentException 이 발생한다.")
@@ -49,7 +50,7 @@ public class BaseballNumberTest {
         //when, then
         assertThatThrownBy(() -> new BaseballNumber(numbers))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("[ERROR] 3자리 수가 아닙니다.");
+                .hasMessage(MessageType.ERROR_NUMBER_SIZE.getMessage());
     }
 
     @DisplayName("baseballNumber 가 중복될 경우 IllegalArgumentException 이 발생한다.")
@@ -60,7 +61,7 @@ public class BaseballNumberTest {
         //when, then
         assertThatThrownBy(() -> new BaseballNumber(numbers))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("[ERROR] 중복된 수는 입력할 수 없습니다.");
+                .hasMessage(MessageType.ERROR_DUPLICATE_NUM.getMessage());
     }
 
     @DisplayName("컴퓨터 number 와 사용자 number 를 매치했을 때, Strike, Ball count 가 리턴된다.")

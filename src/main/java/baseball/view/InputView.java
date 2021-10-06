@@ -1,5 +1,6 @@
 package baseball.view;
 
+import baseball.common.MessageType;
 import baseball.domain.BaseballNumber;
 import baseball.util.BaseballUtil;
 import nextstep.utils.Console;
@@ -11,7 +12,7 @@ public class InputView {
     private static final String EXIT_NUM = "2";
 
     public static BaseballNumber input() {
-        System.out.print("숫자를 입력해주세요 : ");
+        System.out.print(MessageType.INPUT_BASEBALL_NUMBER.getMessage());
         try {
             List<Integer> inputNumbers = BaseballUtil.stringNumbersToList(Console.readLine());
             return new BaseballNumber(inputNumbers);
@@ -22,10 +23,10 @@ public class InputView {
     }
 
     public static boolean restartInput() {
-        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+        System.out.println(MessageType.INPUT_RESTART_NUMBER.getMessage());
         String input = Console.readLine();
         if (!(RESTART_NUM.equals(input) || EXIT_NUM.equals(input))) {
-            System.out.println("[ERROR] 1 또는 2가 아닙니다.");
+            System.out.println(MessageType.ERROR_RESTART_NUMBER.getMessage());
             return restartInput();
         }
         return RESTART_NUM.equals(input);
