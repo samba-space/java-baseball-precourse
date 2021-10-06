@@ -18,7 +18,6 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class BaseballServiceTest {
-
     @Spy
     @InjectMocks
     private BaseballService baseballService;

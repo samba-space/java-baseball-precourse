@@ -13,7 +13,6 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.*;
 
 public class BaseballUtilTest {
-
     @DisplayName("number format 인 stringNumber 입력 일 경우 정상 변환된다.")
     @Test
     void 정상_stringNumbers_입력() {

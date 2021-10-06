@@ -12,7 +12,6 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.*;
 
 public class BaseballNumberTest {
-
     @DisplayName("정상 baseballNumbers 입력 시 BaseBallNumber 가 생성된다.")
     @Test
     void 정상_numbers_입력() {

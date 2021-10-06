@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Set;
 
 public class BaseballNumber {
-
     private static final int NUMBER_SIZE = 3;
 
     private final List<Integer> baseballNumbers;
