@@ -22,8 +22,8 @@ public class ApplicationTest extends NSTest {
             mockRandoms
                     .when(() -> Randoms.pickNumberInRange(anyInt(), anyInt()))
                     .thenReturn(1, 3, 5);
-            running("246");
-            verify("낫싱");
+            running("246", "135");
+            verify("낫싱", "3스트라이크");
         }
     }
 
