@@ -13,14 +13,15 @@ public class OutputView {
             System.out.printf("%d볼", ball);
         }
         printOrderCase(result);
+        System.out.println();
     }
 
     private static void printOrderCase(BaseballResultVO result) {
         if (result.isFinish()) {
-            System.out.println("\n3개의 숫자를 모두 맞히셨습니다! 게임 끝");
+            System.out.print("\n3개의 숫자를 모두 맞히셨습니다! 게임 끝");
         }
         if (result.isNoting()) {
-            System.out.println("낫싱");
+            System.out.print("낫싱");
         }
     }
 }
