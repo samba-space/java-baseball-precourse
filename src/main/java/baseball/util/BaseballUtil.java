@@ -8,10 +8,11 @@ public class BaseballUtil {
     private BaseballUtil() {}
 
     public static List<Integer> stringNumbersToList(String stringNumber) {
+        stringNumber = stringNumber != null ? stringNumber.trim() : null;
         validateNullOrEmpty(stringNumber);
         validateNumberFormat(stringNumber);
         List<Integer> result = new ArrayList<>();
-        String[] splitStr = stringNumber.trim().split("");
+        String[] splitStr = stringNumber.split("");
         for (String singleStr : splitStr) {
             result.add(Integer.parseInt(singleStr));
         }
@@ -19,7 +20,7 @@ public class BaseballUtil {
     }
 
     private static void validateNullOrEmpty(String stringNumbers) {
-        if(stringNumbers == null || stringNumbers.trim().isEmpty()){
+        if(stringNumbers == null || stringNumbers.isEmpty()){
             throw new IllegalArgumentException("[ERROR] 빈 값을 입력할 수 없습니다.");
         }
     }
