@@ -23,7 +23,7 @@ public class BaseballNumberTest {
     }
 
     @DisplayName("baseballNumbers null 또는 empty 입력 시 IllegalArgumentException 이 발생한다.")
-    @ParameterizedTest
+    @ParameterizedTest(name = "[{index}] numbers={0}")
     @NullAndEmptySource
     void null_empty_numbers_입력_예외발생(List<Integer> numbers) {
         assertThatThrownBy(() -> new BaseballNumber(numbers))
@@ -65,7 +65,7 @@ public class BaseballNumberTest {
     }
 
     @DisplayName("컴퓨터 number 와 사용자 number 를 매치했을 때, Strike, Ball count 가 리턴된다.")
-    @ParameterizedTest
+    @ParameterizedTest(name = "[{index}] userNumbers={0}{1}{2}, return strike={3}, return ball={4}")
     @CsvSource(value = {"1,2,3,1,1", "1,4,5,0,1", "6,7,1,0,2", "2,1,6,1,0", "7,1,3,3,0"})
     void 사용자_컴퓨터_숫자_매치(int userNum1, int userNum2, int userNum3, int strike, int ball) {
         //given

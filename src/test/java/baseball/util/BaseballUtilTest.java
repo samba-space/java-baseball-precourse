@@ -28,7 +28,7 @@ public class BaseballUtilTest {
     }
 
     @DisplayName("number format 아닌 stringNumber 입력 일 경우 IllegalArgumentException 발생한다.")
-    @ParameterizedTest
+    @ParameterizedTest(name = "[{index}] stringNumber={0}")
     @ValueSource(strings = {"a23", "1 3"})
     void 숫자형식_아닌_StringNumbers_입력_예외발생(String stringNumber) {
         assertThatThrownBy(() -> BaseballUtil.stringNumbersToList(stringNumber))
@@ -37,7 +37,7 @@ public class BaseballUtilTest {
     }
 
     @DisplayName("null 또는 empty stringNumber 입력 일 경우 IllegalArgumentException 발생한다.")
-    @ParameterizedTest
+    @ParameterizedTest(name = "[{index}] stringNumber={0}")
     @NullAndEmptySource
     void null_empty_StringNumbers_입력_예외발생(String stringNumber) {
         assertThatThrownBy(() -> BaseballUtil.stringNumbersToList(stringNumber))
