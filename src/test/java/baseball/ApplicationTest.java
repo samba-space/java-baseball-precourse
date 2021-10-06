@@ -63,7 +63,7 @@ public class ApplicationTest extends NSTest {
         try (final MockedStatic<Randoms> mockRandoms = mockStatic(Randoms.class)) {
             mockRandoms.when(() -> Randoms.pickNumberInRange(anyInt(), anyInt()))
                     .thenReturn(7, 1, 3);
-            running("abc", "1 3", "12","1234", "012", "112", "", " ","713");
+            running("abc", "1 3", "12", "1234", "012", "112", "", " ", "713");
             verify("ERROR", "3스트라이크");
         }
     }
