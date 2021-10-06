@@ -1,5 +1,7 @@
 package baseball.domain;
 
+import baseball.common.Constants;
+
 import java.util.Objects;
 
 public class BaseballResultVO {
@@ -20,7 +22,7 @@ public class BaseballResultVO {
     }
 
     public boolean isFinish() {
-        return strike == 3;
+        return strike == Constants.BASEBALL_NUMBER_SIZE;
     }
 
     public boolean isBoth() {

@@ -1,5 +1,6 @@
 package baseball.view;
 
+import baseball.common.Constants;
 import baseball.common.MessageType;
 import baseball.domain.BaseballNumber;
 import baseball.util.BaseballUtil;
@@ -8,9 +9,6 @@ import nextstep.utils.Console;
 import java.util.List;
 
 public class InputView {
-    private static final String RESTART_NUM = "1";
-    private static final String EXIT_NUM = "2";
-
     public static BaseballNumber input() {
         System.out.print(MessageType.INPUT_BASEBALL_NUMBER.getMessage());
         try {
@@ -25,10 +23,10 @@ public class InputView {
     public static boolean restartInput() {
         System.out.println(MessageType.INPUT_RESTART_NUMBER.getMessage());
         String input = Console.readLine();
-        if (!(RESTART_NUM.equals(input) || EXIT_NUM.equals(input))) {
+        if (!(Constants.GAME_RESTART_INPUT.equals(input) || Constants.GAME_EXIT_INPUT.equals(input))) {
             System.out.println(MessageType.ERROR_RESTART_NUMBER.getMessage());
             return restartInput();
         }
-        return RESTART_NUM.equals(input);
+        return Constants.GAME_RESTART_INPUT.equals(input);
     }
 }

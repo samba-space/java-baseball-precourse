@@ -1,11 +1,10 @@
 package baseball.view;
 
+import baseball.common.Constants;
 import baseball.common.MessageType;
 import baseball.domain.BaseballResultVO;
 
 public class OutputView {
-    private static final String RESULT_FORMAT = "%d스트라이크 %d볼";
-
     public static void output(BaseballResultVO result) {
         System.out.println(getPrintFormat(result));
         if (result.isFinish()) {
@@ -14,7 +13,7 @@ public class OutputView {
     }
 
     private static String getPrintFormat(BaseballResultVO result) {
-        String printFormat = String.format(RESULT_FORMAT, result.getStrike(), result.getBall());
+        String printFormat = String.format(Constants.GAME_RESULT_FORMAT, result.getStrike(), result.getBall());
         if (result.isNoting()) {
             return MessageType.RESULT_NOTING.getMessage();
         }

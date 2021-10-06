@@ -1,5 +1,6 @@
 package baseball.service;
 
+import baseball.common.Constants;
 import baseball.domain.BaseballNumber;
 import baseball.domain.BaseballResultVO;
 import baseball.view.InputView;
@@ -9,10 +10,6 @@ import nextstep.utils.Randoms;
 import java.util.*;
 
 public class BaseballService {
-    private static final int RANGE_START = 1;
-    private static final int RANGE_END = 9;
-    private static final int NUMBER_SIZE = 3;
-
     public void play() {
         BaseballNumber computerNumbers = new BaseballNumber(createNonDuplicateNumbers());
         BaseballResultVO result;
@@ -29,8 +26,8 @@ public class BaseballService {
 
     public List<Integer> createNonDuplicateNumbers() {
         Set<Integer> nonDuplicateNumbers = new LinkedHashSet<>();
-        while (nonDuplicateNumbers.size() < NUMBER_SIZE) {
-            nonDuplicateNumbers.add(Randoms.pickNumberInRange(RANGE_START, RANGE_END));
+        while (nonDuplicateNumbers.size() < Constants.BASEBALL_NUMBER_SIZE) {
+            nonDuplicateNumbers.add(Randoms.pickNumberInRange(Constants.RANGE_START_NUM, Constants.RANGE_END_NUM));
         }
         return new ArrayList<>(nonDuplicateNumbers);
     }
