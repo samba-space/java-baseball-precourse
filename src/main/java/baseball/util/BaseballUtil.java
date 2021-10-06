@@ -5,7 +5,8 @@ import java.util.List;
 
 public class BaseballUtil {
 
-    private BaseballUtil() {}
+    private BaseballUtil() {
+    }
 
     public static List<Integer> stringNumbersToList(String stringNumber) {
         stringNumber = stringNumber != null ? stringNumber.trim() : null;
@@ -20,7 +21,7 @@ public class BaseballUtil {
     }
 
     private static void validateNullOrEmpty(String stringNumbers) {
-        if(stringNumbers == null || stringNumbers.isEmpty()){
+        if (stringNumbers == null || stringNumbers.isEmpty()) {
             throw new IllegalArgumentException("[ERROR] 빈 값을 입력할 수 없습니다.");
         }
     }

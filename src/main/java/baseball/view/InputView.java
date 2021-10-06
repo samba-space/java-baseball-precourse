@@ -9,6 +9,7 @@ import java.util.List;
 public class InputView {
     private static final String RESTART_NUM = "1";
     private static final String EXIT_NUM = "2";
+
     public static BaseballNumber input() {
         System.out.print("숫자를 입력해주세요 : ");
         try {

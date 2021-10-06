@@ -18,6 +18,6 @@ public class OutputView {
         if (result.isBoth()) {
             return printFormat;
         }
-        return  result.getStrike() > 0 ? printFormat.split(" ")[0] : printFormat.split(" ")[1];
+        return result.getStrike() > 0 ? printFormat.split(" ")[0] : printFormat.split(" ")[1];
     }
 }
